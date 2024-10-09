@@ -1,14 +1,30 @@
 .app-li {
-  width: 20%;
-  margin-top: 20px;
-  margin-right: 20px;
+  width: 250px;
+  list-style-type: none;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
 }
+
+.app-li:hover {
+  transform: scale(1.05);
+}
+
 .pic {
-  height: 145px;
   width: 100%;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
 }
-.para {
-  font-family: 'Roboto';
+
+.name {
+  text-align: center;
+  padding: 15px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  display: block;
+  font-weight: 500;
 }

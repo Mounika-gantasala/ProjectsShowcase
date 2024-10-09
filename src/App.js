@@ -1,10 +1,7 @@
 import {Component} from 'react'
-import Loader from 'react-loader-spinner'
+import {ThreeDots} from 'react-loader-spinner' // Import the named loader component
 import ProjectShowCase from './components/ProjectShowCase'
-import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import './App.css'
-
-// This is the list (static data) used in the application. You can move it to any component if needed.
 
 const categoriesList = [
   {id: 'ALL', displayText: 'All'},
@@ -14,7 +11,6 @@ const categoriesList = [
   {id: 'REACT', displayText: 'React'},
 ]
 
-// Replace your code here
 const apStatus = {
   initial: 'initial',
   loading: 'loading',
@@ -57,20 +53,18 @@ class App extends Component {
 
   loadingView = () => (
     <div data-testid="loader" className="load">
-      <Loader type="ThreeDots" color="#00BFFF" height={50} width={50} />
+      <ThreeDots color="#00BFFF" height={50} width={50} />
     </div>
   )
 
   successView = () => {
     const {data} = this.state
     return (
-      <div className="q-con">
-        <ul className="app-con">
-          {data.map(j => (
-            <ProjectShowCase details={j} key={j.id} />
-          ))}
-        </ul>
-      </div>
+      <ul className="app-con">
+        {data.map(j => (
+          <ProjectShowCase details={j} key={j.id} />
+        ))}
+      </ul>
     )
   }
 
@@ -117,7 +111,7 @@ class App extends Component {
           />
         </nav>
         <div className="main-con">
-          <ul className="sel-con">
+          <div className="sel-con">
             <select className="sel" value={sel} onChange={this.one}>
               {categoriesList.map(each => (
                 <option value={each.id} key={each.id}>
@@ -125,12 +119,11 @@ class App extends Component {
                 </option>
               ))}
             </select>
-          </ul>
-          {this.fainalRender()}
+          </div>
+          <div className="finder">{this.finalRender()}</div>
         </div>
       </div>
     )
   }
 }
-
 export default App

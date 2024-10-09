@@ -6,7 +6,7 @@ const ProjectShowCase = props => {
   return (
     <li className="app-li">
       <img src={imageUrl} className="pic" alt={name} />
-      <p className="name">{name}</p>
+      <span className="name">{name}</span>
     </li>
   )
 }
